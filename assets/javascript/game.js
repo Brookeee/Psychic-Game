@@ -4,3 +4,14 @@ var wins = 0;
 var guesses = 10;
 var guessessofar = [];
 var psyhicGuess;
+
+document.onkeyup = function(event){
+
+
+var letterGuess = function() {
+    psyhicGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+}
+
+//var lettersfar = function() {
+    //document.getElementById()//
+}//
