@@ -5,13 +5,17 @@ var guesses = 10;
 var guessessofar = [];
 var psyhicGuess;
 
-document.onkeyup = function(event){
+var userGuess = letters[Math.floor(Math.random() * letters.length)];
 
+            // document.onkeyup = function(event)
+        // }   
+            // var userChoice = " You guessed correct! ";
+            // var wrongChoice = " Bummer! You guessed wrong ";
 
-var letterGuess = function() {
-    psyhicGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
-}
+            // if userChoice {
+
+        // }
 
 //var lettersfar = function() {
     //document.getElementById()//
-}//
+//
