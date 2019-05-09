@@ -1,8 +1,7 @@
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var losses = 0; 
 var wins = 0;
-var guesses = [];
-var guessesLeft = 10;
+var guesses = 10;
 var guessesSoFar = []; // capture user input
 var psyhicGuess;
 
@@ -14,14 +13,16 @@ document.onkeyup = function(event){
     
     if (userChoice === psyhicResult) {
         wins++;
-        guesses;
+        guesses = 10;
+        guessesSoFar = [];
     }
-    else {
-        guesses--;
-    }
+    // else {
+        // guesses--;
+    // }
      if (guesses === 0) {
          losses++;
-         guessesLeft -= 10;
+         guesses = 10;
+         guessesSoFar = [];
      }
      document.getElementById('wins').innerHTML = "wins: " + wins;
      document.getElementById('losses').innerHTML = "losses: " + losses;
