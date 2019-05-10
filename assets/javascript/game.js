@@ -3,15 +3,15 @@ var losses = 0;
 var wins = 0;
 var guessesLeft = 10;
 var guessesSoFar = [""]; // capture user input
-var psyhicGuess;
+var psychicGuess;
 
   document.onkeypress = function(event) {
     var userChoice = event.key;
 
     // guessesSoFar.push(userChoice);
-    var psyhicGuess = letters[Math.floor(Math.random() * letters.length)];
+    var psychicGuess = letters[Math.floor(Math.random() * letters.length)];
 
-    if (userChoice === psyhicGuess) {
+    if (userChoice === psychicGuess) {
       wins++;
       guessesLeft = 10;
       guessesSoFar = [""];
@@ -22,7 +22,7 @@ var psyhicGuess;
       guessesSoFar = [""];
       // if users key is incorrect, losses go up by 1
 
-    } if (userChoice !== psyhicGuess) {
+    } if (userChoice !== psychicGuess) {
       guessesLeft--;
       // guesses left decrementing
     }
