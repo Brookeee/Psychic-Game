@@ -1,40 +1,33 @@
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var losses = 0; 
 var wins = 0;
-var guesses = 10;
-var guessesSoFar = []; // capture user input
+var guessesLeft = 10;
+var guessesSoFar = [""]; // capture user input
 var psyhicGuess;
 
-document.onkeyup = function(event){
+  document.onkeypress = function(event) {
     var userChoice = event.key;
 
-    guessesSoFar.push(userChoice);
-    var psyhicResult = letters[Math.floor(Math.random() * letters.length)];
-    
-    if (userChoice === psyhicResult) {
-        wins++;
-        guesses = 10;
-        guessesSoFar = [];
+    // guessesSoFar.push(userChoice);
+    var psyhicGuess = letters[Math.floor(Math.random() * letters.length)];
+
+    if (userChoice === psyhicGuess) {
+      wins++;
+      guessesLeft = 10;
+      guessesSoFar = [""];
+    // if user's key is correct, wins goes up by 1
+    } else if (guessesLeft == 0) {
+      losses++;
+      guessesLeft = 10;
+      guessesSoFar = [""];
+      // if users key is incorrect, losses go up by 1
+
+    } if (userChoice !== psyhicGuess) {
+      guessesLeft--;
+      // guesses left decrementing
     }
-    // else {
-        // guesses--;
-    // }
-     if (guesses === 0) {
-         losses++;
-         guesses = 10;
-         guessesSoFar = [];
-     }
-     document.getElementById('wins').innerHTML = "wins: " + wins;
-     document.getElementById('losses').innerHTML = "losses: " + losses;
-    //  document.getElementById('guesses').innerHTML = "Guesses : " + guesses;
-     //document.getElementById('left').innerHTML = "Guesses Left: " + guessesLeft;
-    }
-    // function printKey(letters) {
-        // if (guessesLeft == 10) {
-            // document.getElementById("guesses").innerHTML += letters;
-        
-        // }
-        // else {
-            // document.getElementById("guesses").innerHTML =+ ", " + letters;
-        // }
-    // }
+  }
+    document.getElementById("wins").innerHTML + wins;
+    document.getElementById("losses").innerHTML + losses;
+    document.getElementById("left").innerHTML + guessesLeft;
+    document.getElementById("guesses").innerHTML + guessesSoFar;
