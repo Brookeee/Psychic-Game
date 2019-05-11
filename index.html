@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head>
+    <head>
     <meta charset="UTF-8">
     <title>Psychic Game</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel= "stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
+    <h1>Psychic Game</h1>
+    <br>
     <div class="game">
-        <h1>Psychic Game</h1>
-        <br>
-        <p> Guess what letters I'm thinking of:</p>
-        <br>
-        <p id = "wins">Wins:</p>
-        <br>
-        <p id = 'losses'>Losses:</p>
-        <br>
-        <p id = "left">Guesses Left: 10</p>
-        <br>
-        <p id = "guesses">Guesses:</p>
+                <h3>Wins:
+                    <span id = "wins"></span>
+                </h3>
+                <br>
+                <h3>Losses:
+                    <span id = "losses"></span>
+                </h3>
+                <br>
+                <h3>Guesses Left:
+                    <span id = "guess"></span>
+                </h3>
+                <br>
+                <h3>Guessed letters: 
+                    <span id = "playerGuess"></span>
+                </h3>
     </div>
         <script src="assets/javascript/game.js"></script>
 </body>
